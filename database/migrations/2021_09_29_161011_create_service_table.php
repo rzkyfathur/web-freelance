@@ -15,8 +15,8 @@ class CreateServiceTable extends Migration
     {
         Schema::create('service', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('title')->nullable();
+            $table->foreignId('users_id')->nullable()->index('fk_service_to_users');
+            $table->string('title');
             $table->longText('description')->nullable();
             $table->integer('delivery_time')->nullable();
             $table->integer('revision_limit')->nullable();

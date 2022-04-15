@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThumbnailServiceTable extends Migration
+class CreateTaglineTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateThumbnailServiceTable extends Migration
      */
     public function up()
     {
-        Schema::create('thumbnail_service', function (Blueprint $table) {
+        Schema::create('tagline', function (Blueprint $table) {
             $table->id();
-            $table->integer('service_id')->nullable();
-            $table->longText('thumbnail');
+            $table->foreignId('service_id')->nullable()->index('fk_tagline_to_service');
+            $table->string('tagline');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateThumbnailServiceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thumbnail_service');
+        Schema::dropIfExists('tagline');
     }
 }

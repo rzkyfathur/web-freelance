@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTaglineTable extends Migration
+class CreateAdvantageUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTaglineTable extends Migration
      */
     public function up()
     {
-        Schema::create('tagline', function (Blueprint $table) {
+        Schema::create('advantage_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('service_id')->nullable();
-            $table->string('tagline');
+            $table->foreignId('service_id')->nullable()->index('fk_advantage_user_to_service');
+            $table->string('advantage');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateTaglineTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tagline');
+        Schema::dropIfExists('advantage_user');
     }
 }

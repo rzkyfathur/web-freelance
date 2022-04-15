@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdvantageServiceTable extends Migration
+class CreateExperienceUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateAdvantageServiceTable extends Migration
      */
     public function up()
     {
-        Schema::create('advantage_service', function (Blueprint $table) {
+        Schema::create('experience_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('service_id')->nullable();
-            $table->string('advantage');
+            $table->foreignId('detail_user_id')->nullable()->index('fk_experience_user_to_detail_user');
+            $table->string('experience')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateAdvantageServiceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('advantage_service');
+        Schema::dropIfExists('experience_user');
     }
 }
