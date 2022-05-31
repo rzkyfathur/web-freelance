@@ -12,7 +12,7 @@ class ExperienceUser extends Model
 
     use SoftDeletes;
 
-    protected $table = 'experience_user';
+    public $table = 'experience_user';
 
     protected $dates = [
         'updated_at',
@@ -31,6 +31,6 @@ class ExperienceUser extends Model
     //one to many
     public function detail_user()
     {
-        return $this->hasOne('App/Models/DetailUser', 'detail_user_id', 'id');
+        return $this->belongsTo('App/Models/DetailUser', 'detail_user_id', 'id');
     }
 }
