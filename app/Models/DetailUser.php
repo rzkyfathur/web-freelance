@@ -12,7 +12,7 @@ class DetailUser extends Model
 
     use SoftDeletes;
 
-    protected $table = 'detail_user';
+    public $table = 'detail_user';
 
     protected $dates = [
         'updated_at',
