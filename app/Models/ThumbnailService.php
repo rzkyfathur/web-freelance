@@ -31,6 +31,6 @@ class ThumbnailService extends Model
 
     public function service()
     {
-        return $this->belongsTo('App/Models/Service', 'service_id', 'id');
+        return $this->belongsTo('App\Models\Service', 'service_id', 'id');
     }
 }
