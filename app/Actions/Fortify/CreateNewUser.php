@@ -43,7 +43,7 @@ class CreateNewUser implements CreatesNewUsers
                 $detail_user->photo = null;
                 $detail_user->role = null;
                 $detail_user->contact_number = null;
-                $detail_user->bioraphy = null;
+                $detail_user->biography = null;
                 $detail_user->save();
             });
         });
