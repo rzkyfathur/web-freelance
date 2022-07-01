@@ -133,7 +133,7 @@ class ProfileController extends Controller
         $experience_user_id = ExperienceUser::where('detail_user_id', $detail_user['id'])->first();
 
         if (isset($experience_user_id)) {
-            foreach ($data_profile['experience'] as $key => $value) {
+            foreach ($data_detail_user['experience'] as $key => $value) {
                 $experience_user = ExperienceUser::find($key);
                 $experience_user->detail_user_id = $detail_user['id'];
                 $experience_user->experience = $value;
@@ -141,7 +141,7 @@ class ProfileController extends Controller
             }
         } else {
 
-            foreach ($data_profile['experience'] as $key => $value) {
+            foreach ($data_detail_user['experience'] as $key => $value) {
                 if (isset($value)) {
                     $experience_user = new ExperienceUser;
                     $experience_user->detail_user_id = $detail_user['id'];
