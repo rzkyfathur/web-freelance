@@ -63,6 +63,6 @@ class Service extends Model
 
     public function order()
     {
-        return $this->hasMany('App/Models/Order', 'service_id',);
+        return $this->hasMany('App\Models\Order', 'service_id',);
     }
 }
