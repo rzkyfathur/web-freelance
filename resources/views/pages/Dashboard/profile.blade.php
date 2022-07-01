@@ -65,7 +65,7 @@
                                         </div>
                                         <div class="md:col-span-6 lg:col-span-3">
                                             <label for="role" class="block mb-3 font-medium text-gray-700 text-md">Role</label>
-                                            <input placeholder="Your role" type="text" name="role" id="role" autocomplete="role" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{$user->detail_user->role ?? ''}}" required>
+                                            <input placeholder="Your role" type="text" name="role" id="role" autocomplete="role" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{$user->detail_user->role ?? old('role')}}" required>
 
                                             @if ($errors->has('role'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('role') }}</p>
@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="md:col-span-6 lg:col-span-3">
                                             <label for="contact_number" class="block mb-3 font-medium text-gray-700 text-md">Contact Number</label>
-                                            <input placeholder="Input your contact number" type="number" name="contact_number" id="contact_number" autocomplete="contact_number" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{$user->detail_user->contact_number ?? ''}}" required>
+                                            <input placeholder="Input your contact number" type="number" name="contact_number" id="contact_number" autocomplete="contact_number" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{$user->detail_user->contact_number ?? old('contact_number')}}" required>
 
                                              @if ($errors->has('contact_number'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('contact_number') }}</p>
@@ -89,7 +89,7 @@
                                         </div>
                                         <div class="col-span-6">
                                             <label for="biography" class="block mb-3 font-medium text-gray-700 text-md">Biografi</label>
-                                            <textarea placeholder="Enter your biography here.." type="text" name="biography" id="biography" autocomplete="biography" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" rows="4">{{ $user->detail_user->biography ?? '' }}</textarea>
+                                            <textarea placeholder="Enter your biography here.." type="text" name="biography" id="biography" autocomplete="biography" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" rows="4">{{ $user->detail_user->biography ?? old('biography') }}</textarea>
 
                                             @if ($errors->has('biography'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('biography') }}</p>
